@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMoreOpen, setIsMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -37,10 +39,28 @@ export function Navbar() {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false)
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+        setIsMoreOpen(false)
+      }
     }
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
+  }, [])
+
+  // Close "More" dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setIsMoreOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside as any)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside as any)
+    }
   }, [])
 
   return (
@@ -82,16 +102,21 @@ export function Navbar() {
               </Link>
             ))}
             {navLinks.length > 8 && (
-              <div className="relative group">
-                <button className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200">
-                  More ▼
+              <div className="relative group" ref={moreRef}>
+                <button
+                  onClick={() => setIsMoreOpen((prev) => !prev)}
+                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
+                >
+                  More {isMoreOpen ? '▲' : '▼'}
                 </button>
-                <div className="absolute right-0 mt-0 w-48 bg-card/95 backdrop-blur border border-blue-500/20 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className={`absolute right-0 mt-0 w-48 bg-card/95 backdrop-blur border border-blue-500/20 rounded-lg shadow-lg transition-all duration-200 ${isMoreOpen ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'
+                  }`}>
                   {navLinks.slice(8).map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 first:rounded-t-lg last:rounded-b-lg transition-all"
+                      onClick={() => setIsMoreOpen(false)}
                     >
                       {link.label}
                     </Link>
