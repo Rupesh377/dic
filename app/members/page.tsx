@@ -10,7 +10,7 @@ import { MemberCard } from '@/components/MemberCard'
 import { members, teachers } from '@/data/members'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import ChromaGrid, { type ChromaGridItem } from '@/components/ui/ChromaGrid'
+
 import FloatingLines from '@/components/ui/FloatingLines'
 
 export default function MembersPage() {
@@ -39,15 +39,7 @@ export default function MembersPage() {
   const filteredMembers = useMemo(() => {
     return members.filter((member) => {
       if (selectedCalendarYear) {
-        const studentYearInThatYear = calculateStudentYear(
-          member.joiningYear,
-          selectedCalendarYear
-        )
-        // Only show members who were in school during that year
-        if (
-          member.joiningYear > selectedCalendarYear ||
-          selectedCalendarYear - member.joiningYear > 3
-        ) {
+        if (member.joiningYear !== selectedCalendarYear) {
           return false
         }
       }
@@ -59,26 +51,7 @@ export default function MembersPage() {
     })
   }, [selectedCalendarYear, selectedClub])
 
-  const featuredItems: ChromaGridItem[] = members.slice(0, 6).map((m, idx) => {
-    const palette = [
-      { border: '#3B82F6', gradient: 'linear-gradient(145deg,#3B82F6,#000000)' },
-      { border: '#10B981', gradient: 'linear-gradient(210deg,#10B981,#000000)' },
-      { border: '#8B5CF6', gradient: 'linear-gradient(225deg,#8B5CF6,#000000)' },
-      { border: '#F97316', gradient: 'linear-gradient(165deg,#F97316,#000000)' },
-      { border: '#EC4899', gradient: 'linear-gradient(195deg,#EC4899,#000000)' },
-      { border: '#06B6D4', gradient: 'linear-gradient(135deg,#06B6D4,#000000)' },
-    ]
-    const color = palette[idx % palette.length]
-    return {
-      image: m.image || '/placeholder.svg',
-      title: m.name,
-      subtitle: m.role || (m.year ? `Year ${m.year}` : ''),
-      handle: m.clubs?.[0] ?? '',
-      borderColor: color.border,
-      gradient: color.gradient,
-      memberId: m.id,
-    }
-  })
+
 
   return (
     <>
@@ -112,25 +85,7 @@ export default function MembersPage() {
               </p>
             </div>
 
-            <div className="hidden md:block">
-              <h2 className="text-lg font-semibold text-foreground mb-3">
-                Spotlight Members
-              </h2>
-              <div className="h-[320px] md:h-[360px] lg:h-[400px] relative">
-                <ChromaGrid
-                  items={featuredItems}
-                  radius={260}
-                  damping={0.5}
-                  fadeOut={0.7}
-                  onItemClick={(item) => {
-                    const found = members.find((m) => m.id === item.memberId)
-                    if (found) {
-                      setSelectedMember(found)
-                    }
-                  }}
-                />
-              </div>
-            </div>
+
           </div>
         </section>
 
@@ -144,11 +99,10 @@ export default function MembersPage() {
                 <div className="space-y-2 max-h-48 overflow-y-auto">
                   <button
                     onClick={() => setSelectedCalendarYear(null)}
-                    className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${
-                      selectedCalendarYear === null
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
-                    }`}
+                    className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${selectedCalendarYear === null
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
+                      }`}
                   >
                     All Years
                   </button>
@@ -156,11 +110,10 @@ export default function MembersPage() {
                     <button
                       key={item.year}
                       onClick={() => setSelectedCalendarYear(item.year)}
-                      className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${
-                        selectedCalendarYear === item.year
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
-                      }`}
+                      className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${selectedCalendarYear === item.year
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
+                        }`}
                     >
                       {item.year} {selectedCalendarYear === item.year && '✓'}
                     </button>
@@ -174,11 +127,10 @@ export default function MembersPage() {
                 <div className="space-y-2">
                   <button
                     onClick={() => setSelectedClub(null)}
-                    className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${
-                      selectedClub === null
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
-                    }`}
+                    className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${selectedClub === null
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
+                      }`}
                   >
                     All Clubs
                   </button>
@@ -186,11 +138,10 @@ export default function MembersPage() {
                     <button
                       key={club}
                       onClick={() => setSelectedClub(club)}
-                      className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${
-                        selectedClub === club
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
-                      }`}
+                      className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${selectedClub === club
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
+                        }`}
                     >
                       {club} {selectedClub === club && '✓'}
                     </button>
@@ -203,11 +154,10 @@ export default function MembersPage() {
                 <h3 className="text-sm font-semibold text-foreground mb-3">Faculty</h3>
                 <button
                   onClick={() => setShowTeachers(!showTeachers)}
-                  className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${
-                    showTeachers
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
-                  }`}
+                  className={`w-full px-4 py-2 rounded-lg transition-all text-sm font-medium ${showTeachers
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
+                    }`}
                 >
                   {showTeachers ? 'Showing Faculty' : 'Show Faculty Advisors'}
                 </button>
@@ -253,9 +203,8 @@ export default function MembersPage() {
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-foreground mb-2">
                     {selectedClub || selectedCalendarYear
-                      ? `Members${selectedClub ? ` - ${selectedClub}` : ''}${
-                          selectedCalendarYear ? ` - ${selectedCalendarYear}` : ''
-                        }`
+                      ? `Members${selectedClub ? ` - ${selectedClub}` : ''}${selectedCalendarYear ? ` - ${selectedCalendarYear}` : ''
+                      }`
                       : 'All Members'}
                   </h2>
                   <p className="text-muted-foreground">

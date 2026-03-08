@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -45,16 +46,22 @@ export function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-background/90 backdrop-blur-lg border-b border-blue-500/30 shadow-lg'
-          : 'bg-background/60 backdrop-blur-sm border-b border-blue-500/10'
+        ? 'bg-background/90 backdrop-blur-lg border-b border-blue-500/30 shadow-lg'
+        : 'bg-background/60 backdrop-blur-sm border-b border-blue-500/10'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo - click goes to loading page then home */}
           <Link href="/loading" className="flex items-center space-x-2 hover:scale-105 transition-transform">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-blue-500/50">
-              <span className="text-white font-bold text-lg">D</span>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+              <Image
+                src="/dic-logo.png"
+                alt="DIC Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-primary">DIC</div>
