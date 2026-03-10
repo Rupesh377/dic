@@ -33,7 +33,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold text-foreground mb-4">About</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              DIC, Rospinot, and VR Club are communities dedicated to innovation, robotics, and immersive technologies.
+              DIC, ROSPINOT, and the VR/AR/MR Club are student-driven communities dedicated to advancing innovation in robotics, immersive technologies, and emerging digital systems.
             </p>
           </div>
 

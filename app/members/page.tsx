@@ -242,9 +242,15 @@ export default function MembersPage() {
         title={selectedMember?.name}
         footer={
           <div className="flex gap-3 justify-end">
-            <Link href="/contact" onClick={() => setSelectedMember(null)}>
-              <Button className="rounded-lg">Let&apos;s Connect</Button>
-            </Link>
+            {selectedMember?.linkedin ? (
+              <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" onClick={() => setSelectedMember(null)}>
+                <Button className="rounded-lg">Let&apos;s Connect</Button>
+              </a>
+            ) : (
+              <Link href="/contact" onClick={() => setSelectedMember(null)}>
+                <Button className="rounded-lg">Let&apos;s Connect</Button>
+              </Link>
+            )}
             <Button variant="outline" onClick={() => setSelectedMember(null)} className="rounded-lg">
               Close
             </Button>

@@ -78,7 +78,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <BlurText
-                  text="Join DIC, Rospinot, and VR Club where innovation meets creation. We're building tomorrow's technology today."
+                  text="Welcome to the Digital Innovation Community (DIC) — home to ROSPINOT Robotics Club and the VRARMR Club. A place where students collaborate, experiment, and transform ideas into real technological innovations."
                   delay={60}
                   animateBy="words"
                   direction="top"
@@ -138,13 +138,13 @@ export default function Home() {
                   <p className="text-3xl sm:text-4xl font-bold text-primary">
                     <Counter end={150} suffix="+" duration={2000} delay={0} />
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">Members</p>
+                  <p className="text-sm text-muted-foreground mt-2">Active Members</p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl sm:text-4xl font-bold text-primary">
                     <Counter end={12} suffix="+" duration={1600} delay={150} />
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">Awards</p>
+                  <p className="text-sm text-muted-foreground mt-2">Awards & Recognitions</p>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="text-center mb-16">
                 <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Our Clubs</h2>
-                <p className="text-lg text-muted-foreground">Three pillars of innovation</p>
+                <p className="text-lg text-muted-foreground">At DIC, innovation is driven by two specialized communities that focus on emerging technologies and hands-on development.</p>
               </div>
             </ScrollReveal>
 
@@ -165,17 +165,17 @@ export default function Home() {
               {[
                 {
                   icon: Rocket,
-                  title: 'Rospinot',
-                  subtitle: 'Robotics Club',
-                  description: 'Build intelligent autonomous systems. Master robotics, AI, and embedded systems through hands-on projects.',
+                  title: 'ROSPINOT',
+                  subtitle: 'Robotics Innovation Club',
+                  description: 'ROSPINOT is the robotics innovation hub. Members design, build, and program intelligent machines while working on real-world automation challenges.',
                   color: 'from-blue-500 to-cyan-500',
                   id: 'Rospinot' as const,
                 },
                 {
                   icon: Lightbulb,
-                  title: 'VR Club',
-                  subtitle: 'Virtual Reality Club',
-                  description: 'Create immersive experiences. Explore cutting-edge VR technology and interactive digital worlds.',
+                  title: 'VRARMR Club',
+                  subtitle: 'Immersive Technology Club',
+                  description: 'The VRARMR Club explores the future of digital interaction through immersive technologies — designing virtual environments, AR applications, and mixed-reality experiences.',
                   color: 'from-purple-500 to-pink-500',
                   id: 'VR Club' as const,
                 },
@@ -230,7 +230,7 @@ export default function Home() {
                     className="inline-flex justify-center"
                   />
                 </h2>
-                <p className="text-lg text-muted-foreground">Handpicked innovations from our clubs</p>
+                <p className="text-lg text-muted-foreground">Our members actively build projects that push the boundaries of robotics, immersive technology, and artificial intelligence.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
@@ -268,13 +268,12 @@ export default function Home() {
                                     <span className="text-sm font-semibold text-primary">
                                       {project.club} · {project.domain}
                                     </span>
-                                    <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
-                                      project.status === 'active'
+                                    <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${project.status === 'active'
                                         ? 'bg-green-500/20 text-green-400'
                                         : project.status === 'completed'
-                                        ? 'bg-blue-500/20 text-blue-400'
-                                        : 'bg-yellow-500/20 text-yellow-400'
-                                    }`}>
+                                          ? 'bg-blue-500/20 text-blue-400'
+                                          : 'bg-yellow-500/20 text-yellow-400'
+                                      }`}>
                                       {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                                     </span>
                                   </div>
@@ -319,11 +318,10 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        idx === currentSlide
+                      className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide
                           ? 'bg-primary w-8'
                           : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
-                      }`}
+                        }`}
                       aria-label={`Go to project ${idx + 1}`}
                     />
                   ))}
@@ -352,9 +350,9 @@ export default function Home() {
             </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { quote: 'DIC gave me the platform to turn ideas into real robotics projects. The mentorship here is unmatched.', name: 'Aditya K.', role: 'Rospinot Member' },
-                { quote: 'VR Club opened my eyes to immersive tech. We built an educational platform that teachers now use.', name: 'Isha R.', role: 'VR Club' },
-                { quote: 'From workshops to hackathons, the community pushes you to grow. Best decision I made in college.', name: 'Rajesh P.', role: 'Core Team' },
+                { quote: 'Being part of ROSPINOT allowed me to work on real robotics projects and compete in national competitions. It\'s the best place to turn ideas into working machines.', name: 'Aditya K.', role: 'ROSPINOT Member' },
+                { quote: 'The VRARMR Club opened my eyes to immersive tech. We built interactive AR experiences that showcased the practical applications of augmented reality.', name: 'Kavya S.', role: 'VRARMR Club' },
+                { quote: 'From workshops to hackathons, DIC pushes you to grow technically and creatively. Joining was the best decision I made in college.', name: 'Pushkar C.', role: 'ROSPINOT Member' },
               ].map((t, idx) => (
                 <ScrollReveal key={t.name} delay={idx * 120}>
                   <ElectricBorder color="#38bdf8" borderRadius={20}>
@@ -385,26 +383,26 @@ export default function Home() {
                     className="inline-flex justify-center"
                   />
                 </h2>
-                <p className="text-lg text-muted-foreground">Common questions</p>
+                <p className="text-lg text-muted-foreground">Common questions about joining and participating</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <Accordion type="single" collapsible className="rounded-xl border border-blue-500/20 bg-card/40 backdrop-blur overflow-hidden">
                 <AccordionItem value="1" className="px-6 border-blue-500/10">
-                  <AccordionTrigger>How do I join DIC or a club?</AccordionTrigger>
-                  <AccordionContent>Visit the Contact page or reach out during orientation. You can also attend our open workshops and introduce yourself to the core team.</AccordionContent>
+                  <AccordionTrigger>How can I join the community?</AccordionTrigger>
+                  <AccordionContent>Students can join by reaching out through the Contact page or attending one of our onboarding sessions held at the start of each semester.</AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="2" className="px-6 border-blue-500/10">
-                  <AccordionTrigger>Do I need prior experience in robotics or VR?</AccordionTrigger>
-                  <AccordionContent>No. We welcome beginners. We run workshops and mentorship programs to help you get started and grow with the community.</AccordionContent>
+                  <AccordionTrigger>Do I need prior experience?</AccordionTrigger>
+                  <AccordionContent>No prior experience is required. Beginners are welcome — we provide workshops, mentorship, and collaborative projects to help members learn.</AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="3" className="px-6 border-blue-500/10">
-                  <AccordionTrigger>How can I contribute to a project?</AccordionTrigger>
-                  <AccordionContent>Check the Projects page for active and planning projects. Contact the project leads or drop a message in our Discord to get involved.</AccordionContent>
+                  <AccordionTrigger>Can I contribute to projects?</AccordionTrigger>
+                  <AccordionContent>Yes. Members can join existing projects or propose their own ideas and form teams within the community.</AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="4" className="px-6 border-blue-500/10">
-                  <AccordionTrigger>When are events and workshops held?</AccordionTrigger>
-                  <AccordionContent>We post events on the Events page and announce them on our social channels. Regular workshops run throughout the semester.</AccordionContent>
+                  <AccordionTrigger>When are events conducted?</AccordionTrigger>
+                  <AccordionContent>Workshops, competitions, and tech events are conducted regularly throughout the academic year.</AccordionContent>
                 </AccordionItem>
               </Accordion>
             </ScrollReveal>
@@ -425,12 +423,12 @@ export default function Home() {
                     className="inline-flex justify-center"
                   />
                 </h2>
-                <p className="text-lg text-muted-foreground">Institutions and organizations we work with</p>
+                <p className="text-lg text-muted-foreground">Our community is supported by academic institutions, technology partners, and research collaborators.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <div className="flex flex-wrap justify-center gap-8 items-center opacity-80">
-                {['Institute', 'Tech Partner', 'Research Lab', 'Innovation Hub'].map((name, i) => (
+                {['Academic Institutions', 'Technology Partners', 'Research Laboratories', 'Innovation Hubs'].map((name, i) => (
                   <ElectricBorder key={name} color="#3b82f6" borderRadius={16}>
                     <div className="flex items-center gap-2 px-6 py-3 rounded-xl border border-blue-500/20 bg-card/40">
                       <Building2 className="w-5 h-5 text-primary" />
@@ -463,10 +461,10 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Rocket, title: 'Real Projects', description: 'Work on impactful projects that solve real-world problems' },
-                { icon: Code, title: 'Expert Mentorship', description: 'Learn from experienced engineers and industry professionals' },
-                { icon: Zap, title: 'Cutting Edge Tech', description: 'Access to latest tools, platforms, and technologies' },
-                { icon: Lightbulb, title: 'Community', description: 'Network with passionate innovators and builders' },
+                { icon: Rocket, title: 'Real Projects', description: 'Work on meaningful projects that apply technology to real-world challenges.' },
+                { icon: Code, title: 'Expert Mentorship', description: 'Learn from experienced seniors, faculty mentors, and industry professionals.' },
+                { icon: Zap, title: 'Cutting-Edge Technology', description: 'Explore robotics, artificial intelligence, and immersive technologies.' },
+                { icon: Lightbulb, title: 'Strong Community', description: 'Collaborate with passionate innovators and build lifelong technical networks.' },
               ].map((feature, idx) => {
                 const Icon = feature.icon
                 return (
@@ -491,67 +489,67 @@ export default function Home() {
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
-            <div className="relative rounded-2xl border border-blue-500/30 overflow-hidden p-12 sm:p-16 text-center shadow-lg shadow-primary/10">
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
-              
-              {/* Content */}
-              <div className="relative space-y-6">
-                <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
-                  <BlurText
-                    text="Ready to Innovate?"
-                    delay={80}
-                    animateBy="words"
-                    direction="top"
-                    className="inline-flex justify-center"
-                  />
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Join thousands of creators building the future through robotics and virtual reality.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Link href="/contact">
-                    <GlareHover
-                      glareColor="#38bdf8"
-                      glareOpacity={0.35}
-                      glareAngle={-30}
-                      glareSize={220}
-                      transitionDuration={700}
-                      className="inline-block"
-                      width="auto"
-                      height="auto"
-                      background="transparent"
-                      borderRadius="9999px"
-                      borderColor="transparent"
-                    >
-                      <Button size="lg" className="group">
-                        Get Started
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </GlareHover>
-                  </Link>
-                  <Link href="/team">
-                    <GlareHover
-                      glareColor="#e5e7eb"
-                      glareOpacity={0.25}
-                      glareAngle={-40}
-                      glareSize={210}
-                      transitionDuration={700}
-                      className="inline-block"
-                      width="auto"
-                      height="auto"
-                      background="transparent"
-                      borderRadius="9999px"
-                      borderColor="transparent"
-                    >
-                      <Button size="lg" variant="outline">
-                        Meet the Team
-                      </Button>
-                    </GlareHover>
-                  </Link>
+              <div className="relative rounded-2xl border border-blue-500/30 overflow-hidden p-12 sm:p-16 text-center shadow-lg shadow-primary/10">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
+
+                {/* Content */}
+                <div className="relative space-y-6">
+                  <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
+                    <BlurText
+                      text="Ready to Innovate?"
+                      delay={80}
+                      animateBy="words"
+                      direction="top"
+                      className="inline-flex justify-center"
+                    />
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Become part of a community that builds the technologies of tomorrow.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <Link href="/contact">
+                      <GlareHover
+                        glareColor="#38bdf8"
+                        glareOpacity={0.35}
+                        glareAngle={-30}
+                        glareSize={220}
+                        transitionDuration={700}
+                        className="inline-block"
+                        width="auto"
+                        height="auto"
+                        background="transparent"
+                        borderRadius="9999px"
+                        borderColor="transparent"
+                      >
+                        <Button size="lg" className="group">
+                          Get Started
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </GlareHover>
+                    </Link>
+                    <Link href="/team">
+                      <GlareHover
+                        glareColor="#e5e7eb"
+                        glareOpacity={0.25}
+                        glareAngle={-40}
+                        glareSize={210}
+                        transitionDuration={700}
+                        className="inline-block"
+                        width="auto"
+                        height="auto"
+                        background="transparent"
+                        borderRadius="9999px"
+                        borderColor="transparent"
+                      >
+                        <Button size="lg" variant="outline">
+                          Meet the Team
+                        </Button>
+                      </GlareHover>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
             </ScrollReveal>
           </div>
         </section>

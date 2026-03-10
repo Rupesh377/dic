@@ -13,31 +13,30 @@ import { Button } from '@/components/ui/button'
 
 const clubEquipment = [
   {
-    category: 'VR/AR/MR Club Equipment',
-    icon: Glasses,
+    category: 'ROSPINOT & Robotics Equipment',
+    icon: Bot,
     items: [
-      { name: 'Meta Quest 2', description: 'Standalone VR headset for immersive experiences', image: '/placeholder.svg', useCase: 'VR demos, prototyping, and workshops', specs: ['Standalone wireless', 'High-res display', 'Hand tracking', 'Multi-user experiences'], category: 'VR/AR/MR Club Equipment' },
-      { name: 'HTC Vive Pro', description: 'Professional-grade VR system for high-fidelity development', image: '/placeholder.svg', useCase: 'High-end development and research', specs: ['SteamVR tracking', '1440×1600 per eye', 'Precision controllers', 'Full-body tracking support'], category: 'VR/AR/MR Club Equipment' },
-      { name: 'AR Development Kits', description: 'Tools for augmented reality prototyping', image: '/placeholder.svg', useCase: 'AR apps and mixed reality projects', specs: ['Mobile & headset AR', 'Spatial mapping', 'Anchor-based experiences'], category: 'VR/AR/MR Club Equipment' },
-      { name: '3D Controllers & Trackers', description: 'Motion tracking for VR interactions', image: '/placeholder.svg', useCase: 'Precise input and body tracking', specs: ['6DoF tracking', 'Haptic feedback', 'Compatible with major runtimes'], category: 'VR/AR/MR Club Equipment' },
+      { name: 'LEGO Mindstorms EV3 Robotics Kits', description: 'Complete robotics kits for teaching and prototyping robot designs', image: '/placeholder.svg', useCase: 'Hands-on robotics sessions, learning sensors and actuators, control logic', specs: ['Programmable brick', 'Motors & sensors included', 'Drag-and-drop visual programming', 'Build-and-test workflow'], category: 'ROSPINOT & Robotics Equipment' },
+      { name: 'Raspberry Pi Development Systems', description: 'Single-board computers used for embedded computing and robotics control', image: '/placeholder.svg', useCase: 'Edge computing, robot control, IoT projects', specs: ['GPIO for sensor integration', 'Linux-based OS', 'Camera & serial support', 'Python and C++ development'], category: 'ROSPINOT & Robotics Equipment' },
+      { name: 'Robotics Sensors & Actuators', description: 'Components for building and testing robotic systems', image: '/placeholder.svg', useCase: 'Robot assembly, feedback systems, motor control', specs: ['IR, ultrasonic, touch sensors', 'DC & servo motors', 'Motor drivers', 'Breadboards & wiring kits'], category: 'ROSPINOT & Robotics Equipment' },
+      { name: 'Development & Simulation Software', description: 'Industry-standard tools for robot simulation and design', image: '/placeholder.svg', useCase: 'Robot modeling, programming, and virtual testing', specs: ['ROS / ROS2 framework', 'Gazebo simulator', 'URDF robot modeling', 'Fusion 360 for CAD design'], category: 'ROSPINOT & Robotics Equipment' },
     ],
   },
   {
-    category: 'ROSPINOT & Robotics',
-    icon: Bot,
+    category: 'VRARMR Club Equipment',
+    icon: Glasses,
     items: [
-      { name: 'ROS-Compatible Robots', description: 'Robots running Robot Operating System', image: '/placeholder.svg', useCase: 'Autonomous navigation and research', specs: ['ROS 1/2 support', 'Lidar & camera ready', 'Simulation (Gazebo)'], category: 'ROSPINOT & Robotics' },
-      { name: 'Arduino & Raspberry Pi', description: 'Embedded systems for robotics projects', image: '/placeholder.svg', useCase: 'Prototyping and education', specs: ['GPIO, I2C, UART', 'Real-time control', 'Sensor integration'], category: 'ROSPINOT & Robotics' },
-      { name: 'Lidar Sensors', description: 'For autonomous navigation and mapping', image: '/placeholder.svg', useCase: 'SLAM and obstacle avoidance', specs: ['360° scanning', 'Range up to 12m', 'Point cloud output'], category: 'ROSPINOT & Robotics' },
-      { name: 'Motor Controllers', description: 'Precision control for robotic actuators', image: '/placeholder.svg', useCase: 'Drivetrains and arms', specs: ['PWM & serial control', 'Current sensing', 'Multi-axis support'], category: 'ROSPINOT & Robotics' },
+      { name: 'VR Headsets', description: 'Immersive virtual reality hardware for development and demos', image: '/placeholder.svg', useCase: 'VR project development, demos, workshops', specs: ['Standalone wireless headsets', 'Hand tracking', 'High-resolution displays', 'Multi-user support'], category: 'VRARMR Club Equipment' },
+      { name: 'AR Development Kits', description: 'Tools for building augmented reality applications', image: '/placeholder.svg', useCase: 'AR apps, marker-based experiences, spatial computing', specs: ['Mobile & headset AR', 'Spatial mapping', 'Anchor-based experiences', 'Snap Lens Studio'], category: 'VRARMR Club Equipment' },
+      { name: '3D Design & Development Tools', description: 'Software suite for 3D modeling, animation, and game engine development', image: '/placeholder.svg', useCase: 'Environment design, game dev, AR/VR applications', specs: ['Blender for 3D modeling', 'Unity game engine', 'Asset pipeline tools', 'Material & shader editors'], category: 'VRARMR Club Equipment' },
     ],
   },
   {
     category: 'Development & Compute',
     icon: Cpu,
     items: [
-      { name: 'Workstation PCs', description: 'High-performance systems for 3D and AI workloads', image: '/placeholder.svg', useCase: 'Rendering, training, and simulation', specs: ['High-end GPU', 'Multi-core CPU', 'Large RAM'], category: 'Development & Compute' },
-      { name: 'Development Boards', description: 'Jetson, STM32, ESP32 for embedded AI', image: '/placeholder.svg', useCase: 'Edge AI and IoT', specs: ['Jetson for vision AI', 'STM32/ESP32 for embedded', 'TensorFlow Lite ready'], category: 'Development & Compute' },
+      { name: 'Workstation PCs', description: 'High-performance systems for rendering, simulation, and development', image: '/placeholder.svg', useCase: '3D rendering, AI training, robot simulation', specs: ['High-end GPU', 'Multi-core CPU', 'Large RAM', 'Dual-monitor support'], category: 'Development & Compute' },
+      { name: 'Development Boards', description: 'Jetson, STM32, ESP32 for embedded AI and edge computing', image: '/placeholder.svg', useCase: 'Edge AI, IoT, embedded robotics', specs: ['Jetson for vision AI', 'STM32/ESP32 for microcontroller', 'TensorFlow Lite ready', 'Sensor integration'], category: 'Development & Compute' },
     ],
   },
 ]

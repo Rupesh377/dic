@@ -14,20 +14,24 @@ const faqs = [
     category: 'General',
     questions: [
       {
-        q: 'What are DIC, Rospinot, and VR Club?',
-        a: 'DIC (Developers & Innovators Club) focuses on web and software development. Rospinot is our robotics club specializing in autonomous systems. VR Club explores virtual and augmented reality technologies.',
+        q: 'What is DIC?',
+        a: 'DIC (Digital Innovation Center) is a student-led technology community focused on robotics, immersive technology, and innovation. It houses ROSPINOT (Robotics Club) and the VRARMR Club.',
       },
       {
-        q: 'How can I join the clubs?',
-        a: 'You can join any of our clubs by attending our recruitment sessions at the beginning of each semester or contacting the club leads directly.',
+        q: 'What is ROSPINOT?',
+        a: 'ROSPINOT is the robotics club under DIC. It focuses on designing, simulating, and building intelligent robotic systems using tools like ROS, embedded hardware, and AI.',
       },
       {
-        q: 'Are memberships free?',
-        a: 'Yes, all club memberships are free and open to all students.',
+        q: 'What is the VRARMR Club?',
+        a: 'The VRARMR Club explores immersive technologies — Virtual Reality, Augmented Reality, and Mixed Reality. Members build interactive applications and experiences using tools like Unity, Blender, and Snap Lens Studio.',
       },
       {
-        q: 'Do I need prior experience?',
-        a: 'No prior experience is necessary. We welcome beginners and provide training and mentorship to help you grow.',
+        q: 'How can I join?',
+        a: 'Membership is open to all students. You can join by connecting with club members, attending orientation sessions at the beginning of each semester, or reaching out via the contact page.',
+      },
+      {
+        q: 'Do I need experience to join?',
+        a: 'No prior experience is required. DIC conducts structured workshops for new members covering programming, robotics, and immersive technologies from the basics.',
       },
     ],
   },
@@ -35,33 +39,16 @@ const faqs = [
     category: 'Activities & Events',
     questions: [
       {
-        q: 'How often do clubs meet?',
-        a: 'Most clubs meet weekly during scheduled time slots. Additional meetings are organized for projects and events.',
+        q: 'What kind of activities do the clubs organize?',
+        a: 'Clubs organize technical workshops, hands-on robotics sessions, AR treasure hunts, Blender and Unity workshops, Metacon and Neotrix events, and project exhibitions at Tachyon tech fest.',
       },
       {
-        q: 'Can I participate in competitions?',
-        a: 'Yes! We regularly participate in inter-college and national competitions. Training is provided for interested members.',
+        q: 'How often do events happen?',
+        a: 'Events are organized throughout the academic year. Technical workshops are conducted each semester, and major events like AR Treasure Hunt, Metacon, Neotrix, and Tachyon take place annually.',
       },
       {
-        q: 'How are events organized?',
-        a: 'Events are planned by club leadership with input from members. We organize workshops, competitions, exhibitions, and networking events.',
-      },
-    ],
-  },
-  {
-    category: 'Projects & Collaboration',
-    questions: [
-      {
-        q: 'How do I get involved in club projects?',
-        a: 'Talk to your club lead about ongoing projects and express your interest. Teams are formed based on skills and availability.',
-      },
-      {
-        q: 'Can external companies collaborate with us?',
-        a: 'Absolutely! We welcome industry partnerships. Check our Collaborate page for more details or contact us directly.',
-      },
-      {
-        q: 'How do we manage project conflicts?',
-        a: 'We have a clear project management process with defined roles, responsibilities, and timelines to ensure smooth collaboration.',
+        q: 'Can I participate in competitions through the clubs?',
+        a: 'Yes. Members participate in hackathons, national robotics competitions, and technical challenges. The clubs also hold internal competitions like CodeConquerors.',
       },
     ],
   },
@@ -69,16 +56,16 @@ const faqs = [
     category: 'Technical',
     questions: [
       {
-        q: 'What tools and equipment do you have access to?',
-        a: 'We have robotics kits, VR equipment, computers, 3D printers, and various software licenses available for member use.',
+        q: 'What technologies and tools do you use?',
+        a: 'ROSPINOT uses ROS/ROS2, Python, C++, Arduino, Raspberry Pi, Fusion 360, and Gazebo. VRARMR uses Unity, Blender, Snap Lens Studio, Meta Quest headsets, and AR development kits.',
       },
       {
-        q: 'Can I learn specific technologies?',
-        a: 'Yes, we offer workshops and training on various technologies relevant to our clubs. Check our Resources page for learning materials.',
+        q: 'What equipment is available for members?',
+        a: 'DIC provides access to LEGO EV3 Robotics Kits, Raspberry Pi boards, robotics sensors and actuators, Meta Quest VR headsets, AR development kits, and high-performance workstations.',
       },
       {
-        q: 'How do you stay updated with latest technologies?',
-        a: 'We follow industry trends, attend conferences, invite expert speakers, and participate in hackathons and competitions.',
+        q: 'Do the clubs offer learning resources?',
+        a: 'Yes. Structured workshops, curated learning paths, mentorship from seniors, and access to development tools and hardware are provided to all active members.',
       },
     ],
   },
@@ -124,7 +111,7 @@ export default function HelpPage() {
               />
             </h1>
             <p className="text-lg text-muted-foreground">
-              Find answers to common questions about our clubs and activities
+              Find answers to common questions about the Digital Innovation Center (DIC), ROSPINOT Robotics Club, and the VRARMR Club.
             </p>
           </div>
         </section>
@@ -148,9 +135,8 @@ export default function HelpPage() {
                       {category.category}
                     </h2>
                     <ChevronDown
-                      className={`w-5 h-5 text-primary transition-transform ${
-                        expandedCategory === category.category ? 'rotate-180' : ''
-                      }`}
+                      className={`w-5 h-5 text-primary transition-transform ${expandedCategory === category.category ? 'rotate-180' : ''
+                        }`}
                     />
                   </button>
 
@@ -173,9 +159,8 @@ export default function HelpPage() {
                                 {qa.q}
                               </p>
                               <ChevronDown
-                                className={`w-5 h-5 text-primary flex-shrink-0 ml-4 transition-transform ${
-                                  expandedQuestion === questionId ? 'rotate-180' : ''
-                                }`}
+                                className={`w-5 h-5 text-primary flex-shrink-0 ml-4 transition-transform ${expandedQuestion === questionId ? 'rotate-180' : ''
+                                  }`}
                               />
                             </button>
 
@@ -201,20 +186,14 @@ export default function HelpPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-foreground mb-4">Didn't find your answer?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Get in touch with us directly. We're here to help!
+              Reach out to us through the contact page or connect with club members directly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:contact@clubs.example.com"
+                href="/contact"
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-blue-600 transition"
               >
-                Email Us
-              </a>
-              <a
-                href="#"
-                className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition"
-              >
-                Join Discord
+                Contact Us
               </a>
             </div>
           </div>

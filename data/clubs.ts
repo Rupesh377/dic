@@ -9,28 +9,29 @@ export interface ClubMemberItem extends InfiniteMenuItem {
   clubs?: string[]
   year?: number
   joiningYear?: number
+  linkedin?: string
 }
 
 export const clubConfig: Record<ClubKey, { title: string; subtitle: string; description: string }> = {
   AR: {
     title: 'AR Club',
     subtitle: 'Augmented Reality',
-    description: 'Building augmented reality experiences that blend digital content with the physical world.',
+    description: 'Developing augmented reality applications that integrate digital content with the real world.',
   },
   VR: {
     title: 'VR Club',
     subtitle: 'Virtual Reality',
-    description: 'Creating immersive virtual reality experiences and interactive digital worlds.',
+    description: 'Building fully immersive virtual environments and simulations for interactive experiences.',
   },
   MR: {
     title: 'MR Club',
     subtitle: 'Mixed Reality',
-    description: 'Exploring the convergence of physical and digital environments in mixed reality.',
+    description: 'Exploring systems where physical and digital elements interact together in real-time.',
   },
   ROSPINOT: {
     title: 'ROSPINOT',
-    subtitle: 'Robotics',
-    description: 'Developing autonomous systems, robotics, and AI-driven innovations.',
+    subtitle: 'Robotics Innovation Club',
+    description: 'Designing intelligent robotic systems by combining mechanical design, software development, simulation, and hardware implementation.',
   },
 }
 
@@ -46,6 +47,7 @@ function toMenuItems(clubMembers: typeof members): ClubMemberItem[] {
     clubs: m.clubs,
     year: m.year,
     joiningYear: m.joiningYear,
+    linkedin: m.linkedin,
   }))
 }
 

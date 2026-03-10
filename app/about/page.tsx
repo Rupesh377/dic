@@ -18,19 +18,19 @@ import ElectricBorder from '@/components/ui/ElectricBorder'
 
 const clubDetails = {
   rospinot: {
-    title: 'Rospinot',
-    subtitle: 'Robotics Club',
+    title: 'ROSPINOT',
+    subtitle: 'Robotics Innovation Club',
     description:
-      "Rospinot is our robotics initiative dedicated to autonomous systems, AI, and embedded hardware. The team competes in international events and builds robots that push what's possible.",
-    focus: ['Autonomous Navigation & Control', 'Computer Vision & Machine Learning', 'Embedded Systems & Electronics'],
+      'ROSPINOT is the robotics research and development community within DIC. The club focuses on designing intelligent robotic systems by combining mechanical design, software development, and hardware implementation. Members work across the entire robotics development pipeline — from conceptual design to simulation and real-world deployment.',
+    focus: ['Robot Design & Modeling', 'URDF & ROS Development', 'Simulation & Testing', 'Hardware Development', 'AI & Machine Learning Integration', 'Mathematics & Control Systems'],
     href: '/rospinot',
   },
   vr: {
-    title: 'VR/AR/MR Club',
-    subtitle: 'Virtual, Augmented & Mixed Reality',
+    title: 'VRARMR Club',
+    subtitle: 'Immersive Technology',
     description:
-      'VR/AR/MR Club explores immersive experiences across games, education, and interactive storytelling, using cutting‑edge XR tools.',
-    focus: ['Game Development & Design', '3D Modeling & Animation', 'VR/AR Application Development'],
+      'The VRARMR Club is the immersive technology community within DIC focused on developing interactive digital experiences using Virtual Reality, Augmented Reality, and Mixed Reality. Members work across the immersive development pipeline, from conceptualizing ideas and designing 3D environments to developing interactive applications and prototypes.',
+    focus: ['3D Environment Design & Modeling', 'Virtual Reality Development', 'Augmented Reality Applications', 'Mixed Reality Interaction Systems', 'Immersive Game Design & Storytelling'],
     href: '/vr-armr',
   },
 } as const
@@ -74,32 +74,30 @@ export default function AboutPage() {
 
         {/* Hero */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-  <div className="max-w-4xl w-full mx-auto text-center">
-    
-    <h1 className="font-bold mb-6 text-foreground drop-shadow-[0_0_18px_rgba(15,23,42,0.9)]">
-      <div className="w-full flex justify-center">
-        <BlurText
-          text={`Digital Innovation Club`}
-          delay={70}
-          animateBy="words"
-          direction="top"
-          className="whitespace-pre-line text-4xl sm:text-5xl lg:text-6xl leading-tight text-center"
-        />
-      </div>
-    </h1>
+          <div className="max-w-4xl w-full mx-auto text-center">
 
-    <p className="text-xl text-muted-foreground mb-4">
-      Digital Innovation Club (DIC) is a student-led umbrella organization dedicated to innovation,
-      collaboration, and excellence through technology.
-    </p>
+            <h1 className="font-bold mb-6 text-foreground drop-shadow-[0_0_18px_rgba(15,23,42,0.9)]">
+              <div className="w-full flex justify-center">
+                <BlurText
+                  text={`About Us`}
+                  delay={70}
+                  animateBy="words"
+                  direction="top"
+                  className="whitespace-pre-line text-4xl sm:text-5xl lg:text-6xl leading-tight text-center"
+                />
+              </div>
+            </h1>
 
-    <p className="text-lg text-muted-foreground">
-      We combine the power of Rospinot (Robotics) and the VR/AR/MR Club to create a complete tech ecosystem —
-      where ideas move from sketches to working robots and immersive experiences.
-    </p>
+            <p className="text-xl text-muted-foreground mb-4">
+              The Digital Innovation Center (DIC) is a collaborative hub for students passionate about technology, engineering, and innovation. It brings together multiple specialized clubs that focus on building real-world technical skills through projects, research, and experimentation.
+            </p>
 
-  </div>
-</section>
+            <p className="text-lg text-muted-foreground">
+              Rather than focusing only on theory, DIC promotes hands-on development, where students design, prototype, and implement real technological solutions. Currently, the center brings together two major clubs — ROSPINOT and the VRARMR Club.
+            </p>
+
+          </div>
+        </section>
         {/* Mission, Vision, Values */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -110,8 +108,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-xl font-bold text-foreground mb-3">Our Mission</h2>
                 <p className="text-muted-foreground">
-                  Build a safe, inclusive playground where students can tinker, fail fast, and ship real robotics and
-                  XR projects that matter.
+                  The Digital Innovation Center (DIC) aims to foster a culture of innovation, collaboration, and hands-on technical learning. Through communities such as ROSPINOT and the VRARMR Club, DIC provides students with opportunities to explore emerging technologies while building practical skills through real-world projects and experimentation.
                 </p>
               </div>
             </ElectricBorder>
@@ -123,8 +120,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-xl font-bold text-foreground mb-3">Our Vision</h2>
                 <p className="text-muted-foreground">
-                  Become a campus hub where ambitious builders from all branches collaborate to create the next wave of
-                  intelligent systems and immersive worlds.
+                  Our vision is to create a community where students can experiment freely, learn continuously, and innovate boldly. By bringing together robotics through ROSPINOT and immersive technologies through the VRARMR Club, DIC strives to inspire the next generation of engineers, developers, and technology innovators.
                 </p>
               </div>
             </ElectricBorder>
@@ -134,12 +130,12 @@ export default function AboutPage() {
                 <div className="w-12 h-12 bg-primary/25 rounded-lg flex items-center justify-center mb-4 shadow-[0_0_16px_rgba(59,130,246,0.25)]">
                   <Zap className="w-6 h-6 text-primary" />
                 </div>
-                <h2 className="text-xl font-bold text-foreground mb-3">Our Values</h2>
+                <h2 className="text-xl font-bold text-foreground mb-3">We Aim To</h2>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Excellence & innovation over shortcuts</li>
-                  <li>• Collaboration & mentorship across batches</li>
-                  <li>• Continuous learning in public</li>
-                  <li>• Integrity, ownership, and respect</li>
+                  <li>• Build real-world technology projects and prototypes</li>
+                  <li>• Explore emerging technologies like robotics & immersive systems</li>
+                  <li>• Foster interdisciplinary collaboration</li>
+                  <li>• Prepare members for research & industry opportunities</li>
                 </ul>
               </div>
             </ElectricBorder>
@@ -159,7 +155,7 @@ export default function AboutPage() {
               />
             </h2>
             <p className="text-muted-foreground text-center mb-10 max-w-xl mx-auto">
-              Learn by building — these are the pillars that shape every semester at DIC.
+              DIC acts as a cluster of specialized technology clubs, each exploring different emerging fields while sharing knowledge and resources within the same innovation community.
             </p>
             <div className="rounded-2xl border border-blue-500/25 bg-card/50 backdrop-blur-sm p-8 sm:p-12 flex items-center justify-center">
               <div className="w-full max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
@@ -209,7 +205,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-foreground">Rospinot</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Robotics, autonomous systems, embedded platforms, and AI‑driven control.
+                    Designing intelligent robotic systems by combining mechanical design, software development, simulation, and hardware implementation.
                   </p>
                   <span className="text-primary text-sm font-medium">Click for details →</span>
                 </div>
@@ -227,7 +223,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-foreground">VR/AR/MR Club</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    XR experiences, interactive 3D, and serious games for learning and fun.
+                    Developing interactive experiences using Virtual Reality, Augmented Reality, and Mixed Reality technologies.
                   </p>
                   <span className="text-primary text-sm font-medium">Click for details →</span>
                 </div>
