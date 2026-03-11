@@ -460,7 +460,7 @@ export const teachers = [
     position: 'Faculty Mentor - ROSPINOT',
     department: 'Chemical Engineering',
     clubs: ['Rospinot'],
-    image: '/avatars/Rahul_Srivatava.jpeg',
+    image: '/avatars/Rahul_Srivastava.jpeg',
   },
   {
     id: 't4',
