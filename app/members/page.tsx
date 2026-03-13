@@ -58,10 +58,7 @@ export default function MembersPage() {
         }
       }
       if (selectedClub) {
-        const clubMatch =
-          selectedClub === 'VR/AR/MR Club'
-            ? member.clubs.includes('VR Club')
-            : member.clubs.includes(selectedClub)
+        const clubMatch = member.clubs.includes(selectedClub)
         if (!clubMatch) return false
       }
       return true
@@ -158,7 +155,7 @@ export default function MembersPage() {
                   >
                     All Clubs
                   </button>
-                  {['Rospinot', 'VR/AR/MR Club', 'DIC'].map((club) => (
+                  {['Rospinot', 'VR AR MR Club', 'DIC'].map((club) => (
                     <button
                       key={club}
                       onClick={() => setSelectedClub(club)}
