@@ -59,7 +59,7 @@ export function getClubMembers(club: ClubKey): ClubMemberItem[] {
     case 'AR':
     case 'VR':
     case 'MR':
-      return toMenuItems(members.filter((m) => m.clubs.includes('VR Club')))
+      return toMenuItems(members.filter((m) => m.clubs.includes('VR AR MR Club')))
     default:
       return []
   }

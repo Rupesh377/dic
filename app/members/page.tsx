@@ -26,14 +26,21 @@ export default function MembersPage() {
   }
 
   // Get available calendar years
-  const availableCalendarYears = Array.from(
-    new Set(members.map((m) => m.joiningYear))
+  const uniqueJoiningYears = Array.from(new Set(members.map((m) => m.joiningYear)))
+
+  const orderedYearValues = [2022, 2023, 2024, 2021].filter((year) =>
+    uniqueJoiningYears.includes(year)
   )
-    .map((year) => ({
-      year,
-      label: year.toString(),
-    }))
-    .sort((a, b) => b.year - a.year)
+
+  const availableCalendarYears = orderedYearValues.map((year) => ({
+    year,
+    label: year === 2021 ? 'PassOut' : year.toString(),
+  }))
+
+  const getYearLabel = (year: number | null) => {
+    if (year === null) return ''
+    return year === 2021 ? 'PassOut' : year.toString()
+  }
 
   // Filter members based on selections
   const filteredMembers = useMemo(() => {
@@ -115,7 +122,7 @@ export default function MembersPage() {
                         : 'bg-card/50 text-muted-foreground hover:bg-secondary border border-blue-500/10'
                         }`}
                     >
-                      {item.year} {selectedCalendarYear === item.year && '✓'}
+                      {item.label} {selectedCalendarYear === item.year && '✓'}
                     </button>
                   ))}
                 </div>
@@ -203,8 +210,9 @@ export default function MembersPage() {
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-foreground mb-2">
                     {selectedClub || selectedCalendarYear
-                      ? `Members${selectedClub ? ` - ${selectedClub}` : ''}${selectedCalendarYear ? ` - ${selectedCalendarYear}` : ''
-                      }`
+                      ? `Members${selectedClub ? ` - ${selectedClub}` : ''}${
+                          selectedCalendarYear ? ` - ${getYearLabel(selectedCalendarYear)}` : ''
+                        }`
                       : 'All Members'}
                   </h2>
                   <p className="text-muted-foreground">

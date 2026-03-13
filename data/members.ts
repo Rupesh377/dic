@@ -4,7 +4,7 @@ export interface Member {
   year: 1 | 2 | 3 | 4 | 5 | 6
   joiningYear: number
   role: string
-  clubs: ('Rospinot' | 'VR Club' | 'DIC')[]
+  clubs: ('Rospinot' | 'VR AR MR Club' | 'DIC')[]
   position?: string
   skills?: string[]
   bio?: string
@@ -80,19 +80,6 @@ export const members: Member[] = [
     linkedin: 'https://www.linkedin.com/in/vaibhav-singh-rajpoot-a866b2179',
   },
   {
-    id: '30',
-    name: 'Devesh Kumar',
-    year: 5,
-    joiningYear: 2021,
-    role: 'Advisor',
-    clubs: ['Rospinot'],
-    position: 'Senior Advisor',
-    skills: ['Robotics', 'Embedded Systems'],
-    bio: 'Experienced robotics advisor and mentor',
-    image: '/avatars/arjun-verma.jpg',
-    linkedin: 'https://www.linkedin.com/in/deveshkumar0902',
-  },
-  {
     id: '31',
     name: 'Utkarsh Rai',
     year: 5,
@@ -102,7 +89,7 @@ export const members: Member[] = [
     position: 'Senior Advisor',
     skills: ['Robotics', 'Engineering'],
     bio: 'Contributing to the robotics ecosystem',
-    image: '/avatars/nikhil-patel.jpg',
+    image: '/avatars/Utkarsh_Rai.jpeg',
     linkedin: 'https://www.linkedin.com/in/utkarshrai22',
   },
 
@@ -167,11 +154,11 @@ export const members: Member[] = [
     year: 3,
     joiningYear: 2023,
     role: 'Secretary',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Secretary',
-    skills: ['VR Research', 'Human-Computer Interaction', 'Project Management'],
+    skills: ['ML','Deep Learning','Data Science','Unity'],
     bio: 'Researching cutting-edge VR technologies',
-    image: '/avatars/isha-reddy.jpg',
+    image: '/avatars/Divya_Jain.jpeg',
     linkedin: 'https://www.linkedin.com/in/divya-28-jain/',
   },
   {
@@ -180,11 +167,11 @@ export const members: Member[] = [
     year: 3,
     joiningYear: 2023,
     role: 'Joint Secretary',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Joint Secretary',
-    skills: ['Leadership', 'Strategy', 'Innovation Management'],
-    bio: 'Driving immersive technology initiatives within the VRARMR Club',
-    image: '/avatars/rohit-verma.jpg',
+    skills: ['VR & AR Development' , 'Snap AR Creator','Unity','Blender','Figma'],
+    bio: 'I am a VR & AR developer with a passion for creating immersive experiences. I am currently pursuing my B.Tech in Computer Science and Engineering at Jaypee University of Engineering and Technology, Guna. I am also a member of the VRARMR Club, where I am involved in the development of VR and AR applications.',
+    image: '/avatars/kavya.jpeg',
     linkedin: 'https://www.linkedin.com/in/kavyasinghal/',
   },
   {
@@ -284,11 +271,11 @@ export const members: Member[] = [
     year: 3,
     joiningYear: 2023,
     role: 'Joint Secretary',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Joint Secretary',
     skills: ['Immersive Tech', 'Project Management'],
     bio: 'Contributing to VRARMR Club initiatives and immersive technology projects',
-    image: '/avatars/nikhil-patel.jpg',
+    image: '/avatars/Kavya_Agarwal.jpeg',
     linkedin: 'https://www.linkedin.com/in/kavya-agarwal-14744b2b0/',
   },
   {
@@ -297,7 +284,7 @@ export const members: Member[] = [
     year: 3,
     joiningYear: 2023,
     role: 'Deputy Secretary',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Deputy Secretary',
     skills: ['Open Source', 'Event Management', 'Community Building', 'Organization'],
     bio: 'Organizing events and building the VRARMR community',
@@ -309,7 +296,7 @@ export const members: Member[] = [
     year: 3,
     joiningYear: 2023,
     role: 'Joint Secretary',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Joint Secretary',
     skills: ['Immersive Tech', 'Problem Solving'],
     bio: 'Exploring immersive technology and VR/AR development',
@@ -337,7 +324,7 @@ export const members: Member[] = [
     year: 2,
     joiningYear: 2024,
     role: 'Coordinator',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Coordinator',
     skills: ['Immersive Tech', 'Problem Solving'],
     bio: 'Eager to learn and contribute to immersive technology projects',
@@ -428,7 +415,7 @@ export const members: Member[] = [
     year: 2,
     joiningYear: 2024,
     role: 'Coordinator',
-    clubs: ['VR Club'],
+    clubs: ['VR AR MR Club'],
     position: 'Coordinator',
     skills: ['Immersive Tech', 'Problem Solving'],
     bio: 'Exploring VR/AR technologies and contributing to club projects',
