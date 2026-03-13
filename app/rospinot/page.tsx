@@ -83,7 +83,7 @@ export default function RospinotPage() {
                 <p className="text-sm text-[#4a5d4a] font-semibold tracking-wider uppercase mb-6">Design. Simulate. Build. Deploy.</p>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
                   <BlurText
-                    text="ROSPINOT is the robotics development community under the Digital Innovation Center (DIC). The club focuses on designing, simulating, and building intelligent robotic systems by combining mechanical design, software development, and real-world hardware implementation."
+                    text="ROSPINOT is the robotics development community under the Development And Innovation Centre (DIC). The club focuses on designing, simulating, and building intelligent robotic systems by combining mechanical design, software development, and real-world hardware implementation."
                     delay={70}
                     animateBy="words"
                     direction="top"

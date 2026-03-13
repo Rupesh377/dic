@@ -84,7 +84,7 @@ export function Navbar() {
             </div>
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-primary">DIC</div>
-              <div className="text-xs text-muted-foreground">Digital Innovation</div>
+              <div className="text-xs text-muted-foreground">Development And Innovation Centre</div>
             </div>
           </Link>
 

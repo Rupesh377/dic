@@ -20,7 +20,6 @@ import Link from 'next/link'
 import { ArrowRight, Zap, Rocket, Code, Lightbulb, Quote, Building2, ChevronLeft, ChevronRight } from 'lucide-react'
 import Hyperspeed, { hyperspeedPresets } from '@/components/ui/Hyperspeed'
 import BlurText from '@/components/ui/BlurText'
-import ElectricBorder from '@/components/ui/ElectricBorder'
 import GlareHover from '@/components/ui/GlareHover'
 import ClickSpark from '@/components/ui/ClickSpark'
 
@@ -78,7 +77,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <BlurText
-                  text="Welcome to the Digital Innovation Community (DIC) — home to ROSPINOT Robotics Club and the VRARMR Club. A place where students collaborate, experiment, and transform ideas into real technological innovations."
+                  text="Welcome to the Development And Innovation Centre (DIC) — home to ROSPINOT Robotics Club and the VRARMR Club. A place where students collaborate, experiment, and transform ideas into real technological innovations."
                   delay={60}
                   animateBy="words"
                   direction="top"
@@ -183,32 +182,30 @@ export default function Home() {
                 const Icon = club.icon
                 return (
                   <ScrollReveal key={club.title} delay={idx * 100} direction="up">
-                    <ElectricBorder color={club.id === 'Rospinot' ? '#22c55e' : '#a855f7'} borderRadius={24}>
+                    <div
+                      className="group relative overflow-hidden rounded-2xl border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.08)] backdrop-blur-sm"
+                      onClick={() => setSelectedClub(club.id)}
+                    >
                       <div
-                        className="group relative overflow-hidden rounded-2xl border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.08)] backdrop-blur-sm"
-                        onClick={() => setSelectedClub(club.id)}
-                      >
+                        className={`absolute inset-0 bg-gradient-to-br ${club.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+                      <div className="relative p-8 sm:p-10 backdrop-blur bg-card/60 group-hover:bg-card/70 transition-all duration-300 h-full flex flex-col">
                         <div
-                          className={`absolute inset-0 bg-gradient-to-br ${club.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                        />
-                        <div className="relative p-8 sm:p-10 backdrop-blur bg-card/60 group-hover:bg-card/70 transition-all duration-300 h-full flex flex-col">
-                          <div
-                            className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${club.color} bg-opacity-10 w-fit mb-6`}
-                          >
-                            <Icon className="w-8 h-8 text-primary" />
-                          </div>
+                          className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${club.color} bg-opacity-10 w-fit mb-6`}
+                        >
+                          <Icon className="w-8 h-8 text-primary" />
+                        </div>
 
-                          <h3 className="text-3xl font-bold text-foreground mb-1">{club.title}</h3>
-                          <p className="text-sm text-primary font-semibold mb-4">{club.subtitle}</p>
-                          <p className="text-muted-foreground mb-8 flex-grow">{club.description}</p>
+                        <h3 className="text-3xl font-bold text-foreground mb-1">{club.title}</h3>
+                        <p className="text-sm text-primary font-semibold mb-4">{club.subtitle}</p>
+                        <p className="text-muted-foreground mb-8 flex-grow">{club.description}</p>
 
-                          <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                            <span>Explore</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </div>
+                        <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                          <span>Explore</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
-                    </ElectricBorder>
+                    </div>
                   </ScrollReveal>
                 )
               })}
@@ -260,52 +257,50 @@ export default function Home() {
                     {projects.map((project) => (
                       <div key={project.id} className="w-full flex-shrink-0 px-1">
                         <Link href="/projects" className="block group">
-                          <ElectricBorder color="#38bdf8" borderRadius={26}>
-                            <div className="rounded-2xl border border-blue-500/30 bg-card/60 backdrop-blur-sm p-8 sm:p-10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-primary/10 hover:shadow-[0_0_40px_rgba(59,130,246,0.06)] transition-all duration-300">
-                              <div className="flex flex-col md:flex-row gap-6 items-start">
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-3 mb-3">
-                                    <span className="text-sm font-semibold text-primary">
-                                      {project.club} · {project.domain}
-                                    </span>
-                                    <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${project.status === 'active'
-                                        ? 'bg-green-500/20 text-green-400'
-                                        : project.status === 'completed'
-                                          ? 'bg-blue-500/20 text-blue-400'
-                                          : 'bg-yellow-500/20 text-yellow-400'
-                                      }`}>
-                                      {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
-                                    </span>
-                                  </div>
-                                  <h3 className="text-2xl sm:text-3xl font-bold text-foreground mt-2 group-hover:text-primary transition">
-                                    {project.name}
-                                  </h3>
-                                  <p className="text-muted-foreground mt-3 line-clamp-2">{project.description}</p>
-                                  <div className="flex flex-wrap gap-2 mt-4">
-                                    {(project.skills ?? []).slice(0, 4).map((s) => (
-                                      <span
-                                        key={s}
-                                        className="px-2 py-1 rounded-md bg-primary/20 text-primary text-xs font-medium"
-                                      >
-                                        {s}
-                                      </span>
-                                    ))}
-                                  </div>
-                                  <div className="flex flex-wrap gap-1 mt-3">
-                                    {project.contributors.slice(0, 3).map((c) => (
-                                      <span key={c} className="text-xs text-muted-foreground">
-                                        {c}{project.contributors.indexOf(c) < Math.min(2, project.contributors.length - 1) ? ',' : ''}
-                                      </span>
-                                    ))}
-                                    {project.contributors.length > 3 && (
-                                      <span className="text-xs text-muted-foreground">+{project.contributors.length - 3} more</span>
-                                    )}
-                                  </div>
+                          <div className="rounded-2xl border border-blue-500/30 bg-card/60 backdrop-blur-sm p-8 sm:p-10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-primary/10 hover:shadow-[0_0_40px_rgba(59,130,246,0.06)] transition-all duration-300">
+                            <div className="flex flex-col md:flex-row gap-6 items-start">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-3">
+                                  <span className="text-sm font-semibold text-primary">
+                                    {project.club} · {project.domain}
+                                  </span>
+                                  <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${project.status === 'active'
+                                      ? 'bg-green-500/20 text-green-400'
+                                      : project.status === 'completed'
+                                        ? 'bg-blue-500/20 text-blue-400'
+                                        : 'bg-yellow-500/20 text-yellow-400'
+                                    }`}>
+                                    {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
+                                  </span>
                                 </div>
-                                <ArrowRight className="w-8 h-8 text-primary group-hover:translate-x-2 transition-transform shrink-0 mt-2" />
+                                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mt-2 group-hover:text-primary transition">
+                                  {project.name}
+                                </h3>
+                                <p className="text-muted-foreground mt-3 line-clamp-2">{project.description}</p>
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                  {(project.skills ?? []).slice(0, 4).map((s) => (
+                                    <span
+                                      key={s}
+                                      className="px-2 py-1 rounded-md bg-primary/20 text-primary text-xs font-medium"
+                                    >
+                                      {s}
+                                    </span>
+                                  ))}
+                                </div>
+                                <div className="flex flex-wrap gap-1 mt-3">
+                                  {project.contributors.slice(0, 3).map((c) => (
+                                    <span key={c} className="text-xs text-muted-foreground">
+                                      {c}{project.contributors.indexOf(c) < Math.min(2, project.contributors.length - 1) ? ',' : ''}
+                                    </span>
+                                  ))}
+                                  {project.contributors.length > 3 && (
+                                    <span className="text-xs text-muted-foreground">+{project.contributors.length - 3} more</span>
+                                  )}
+                                </div>
                               </div>
+                              <ArrowRight className="w-8 h-8 text-primary group-hover:translate-x-2 transition-transform shrink-0 mt-2" />
                             </div>
-                          </ElectricBorder>
+                          </div>
                         </Link>
                       </div>
                     ))}
@@ -355,14 +350,12 @@ export default function Home() {
                 { quote: 'From workshops to hackathons, DIC pushes you to grow technically and creatively. Joining was the best decision I made in college.', name: 'Pushkar C.', role: 'ROSPINOT Member' },
               ].map((t, idx) => (
                 <ScrollReveal key={t.name} delay={idx * 120}>
-                  <ElectricBorder color="#38bdf8" borderRadius={20}>
-                    <div className="p-6 rounded-2xl border border-blue-500/20 bg-card/50 backdrop-blur-sm hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.06)] transition-all duration-300">
-                      <Quote className="w-8 h-8 text-primary/50 mb-4" />
-                      <p className="text-foreground mb-4">&ldquo;{t.quote}&rdquo;</p>
-                      <p className="font-semibold text-foreground">{t.name}</p>
-                      <p className="text-sm text-muted-foreground">{t.role}</p>
-                    </div>
-                  </ElectricBorder>
+                  <div className="p-6 rounded-2xl border border-blue-500/20 bg-card/50 backdrop-blur-sm hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.06)] transition-all duration-300">
+                    <Quote className="w-8 h-8 text-primary/50 mb-4" />
+                    <p className="text-foreground mb-4">&ldquo;{t.quote}&rdquo;</p>
+                    <p className="font-semibold text-foreground">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                  </div>
                 </ScrollReveal>
               ))}
             </div>
@@ -428,13 +421,11 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <div className="flex flex-wrap justify-center gap-8 items-center opacity-80">
-                {['Academic Institutions', 'Technology Partners', 'Research Laboratories', 'Innovation Hubs'].map((name, i) => (
-                  <ElectricBorder key={name} color="#3b82f6" borderRadius={16}>
-                    <div className="flex items-center gap-2 px-6 py-3 rounded-xl border border-blue-500/20 bg-card/40">
-                      <Building2 className="w-5 h-5 text-primary" />
-                      <span className="font-semibold text-foreground">{name}</span>
-                    </div>
-                  </ElectricBorder>
+                {['Academic Institutions', 'Technology Partners', 'Research Laboratories', 'Innovation Hubs'].map((name) => (
+                  <div key={name} className="flex items-center gap-2 px-6 py-3 rounded-xl border border-blue-500/20 bg-card/40">
+                    <Building2 className="w-5 h-5 text-primary" />
+                    <span className="font-semibold text-foreground">{name}</span>
+                  </div>
                 ))}
               </div>
             </ScrollReveal>
@@ -469,15 +460,13 @@ export default function Home() {
                 const Icon = feature.icon
                 return (
                   <ScrollReveal key={idx} delay={idx * 80}>
-                    <ElectricBorder color="#38bdf8" borderRadius={18}>
-                      <div className="group p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/50 bg-card/50 hover:bg-card/65 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/5">
-                        <div className="inline-flex p-3 rounded-lg bg-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <div className="group p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/50 bg-card/50 hover:bg-card/65 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/5">
+                      <div className="inline-flex p-3 rounded-lg bg-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-6 h-6 text-primary" />
                       </div>
-                    </ElectricBorder>
+                      <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </div>
                   </ScrollReveal>
                 )
               })}

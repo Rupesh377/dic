@@ -89,7 +89,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground mb-4">
-              The Digital Innovation Center (DIC) is a collaborative hub for students passionate about technology, engineering, and innovation. It brings together multiple specialized clubs that focus on building real-world technical skills through projects, research, and experimentation.
+              The Development And Innovation Centre (DIC) is a collaborative hub for students passionate about technology, engineering, and innovation. It brings together multiple specialized clubs that focus on building real-world technical skills through projects, research, and experimentation.
             </p>
 
             <p className="text-lg text-muted-foreground">
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-xl font-bold text-foreground mb-3">Our Mission</h2>
                 <p className="text-muted-foreground">
-                  The Digital Innovation Center (DIC) aims to foster a culture of innovation, collaboration, and hands-on technical learning. Through communities such as ROSPINOT and the VRARMR Club, DIC provides students with opportunities to explore emerging technologies while building practical skills through real-world projects and experimentation.
+                  The Development And Innovation Centre (DIC) aims to foster a culture of innovation, collaboration, and hands-on technical learning. Through communities such as ROSPINOT and the VRARMR Club, DIC provides students with opportunities to explore emerging technologies while building practical skills through real-world projects and experimentation.
                 </p>
               </div>
             </ElectricBorder>

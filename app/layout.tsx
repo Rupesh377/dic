@@ -12,8 +12,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'DIC - Digital Innovation Club | Rospinot & VR Club',
-  description: 'DIC, Rospinot, and VR Club - Building the future through robotics, AI, and immersive technology.',
+  title: 'DIC - Development And Innovation Centre | Rospinot & VRARMR Club',
+  description: 'DIC (Development And Innovation Centre), Rospinot, and VRARMR Club - Building the future through robotics, AI, and immersive technology.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"

@@ -42,19 +42,36 @@ export default function MembersPage() {
     return year === 2021 ? 'PassOut' : year.toString()
   }
 
-  // Filter members based on selections
+  // Filter & sort members based on selections
   const filteredMembers = useMemo(() => {
-    return members.filter((member) => {
+    const yearOrder: Record<number, number> = {
+      2022: 0,
+      2023: 1,
+      2024: 2,
+      2021: 3,
+    }
+
+    const filterMatch = members.filter((member) => {
       if (selectedCalendarYear) {
         if (member.joiningYear !== selectedCalendarYear) {
           return false
         }
       }
       if (selectedClub) {
-        const clubMatch = selectedClub === 'VR/AR/MR Club' ? member.clubs.includes('VR Club') : member.clubs.includes(selectedClub)
+        const clubMatch =
+          selectedClub === 'VR/AR/MR Club'
+            ? member.clubs.includes('VR Club')
+            : member.clubs.includes(selectedClub)
         if (!clubMatch) return false
       }
       return true
+    })
+
+    return [...filterMatch].sort((a, b) => {
+      const aOrder = yearOrder[a.joiningYear] ?? 99
+      const bOrder = yearOrder[b.joiningYear] ?? 99
+      if (aOrder !== bOrder) return aOrder - bOrder
+      return a.name.localeCompare(b.name)
     })
   }, [selectedCalendarYear, selectedClub])
 

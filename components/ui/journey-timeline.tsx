@@ -14,7 +14,7 @@ const defaultMilestones: JourneyMilestone[] = [
   { year: '2024', title: 'VR Club launch', description: 'Expanded into immersive tech and VR projects.' },
   { year: '2023', title: 'National recognition', description: 'Awards and partnerships with industry.' },
   { year: '2022', title: 'Rospinot growth', description: 'Robotics team scaled to 50+ active members.' },
-  { year: '2021', title: 'DIC founded', description: 'Digital Innovation Club started with a small core team.' },
+  { year: '2021', title: 'DIC founded', description: 'Development And Innovation Centre started with a small core team.' },
 ]
 
 export function JourneyTimeline({ milestones = defaultMilestones, className }: { milestones?: JourneyMilestone[]; className?: string }) {

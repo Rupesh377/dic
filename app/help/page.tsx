@@ -15,7 +15,7 @@ const faqs = [
     questions: [
       {
         q: 'What is DIC?',
-        a: 'DIC (Digital Innovation Center) is a student-led technology community focused on robotics, immersive technology, and innovation. It houses ROSPINOT (Robotics Club) and the VRARMR Club.',
+        a: 'DIC (Development And Innovation Centre) is a student-led technology community focused on robotics, immersive technology, and innovation. It houses ROSPINOT (Robotics Club) and the VRARMR Club.',
       },
       {
         q: 'What is ROSPINOT?',
@@ -111,7 +111,7 @@ export default function HelpPage() {
               />
             </h1>
             <p className="text-lg text-muted-foreground">
-              Find answers to common questions about the Digital Innovation Center (DIC), ROSPINOT Robotics Club, and the VRARMR Club.
+              Find answers to common questions about the Development And Innovation Centre (DIC), ROSPINOT Robotics Club, and the VRARMR Club.
             </p>
           </div>
         </section>

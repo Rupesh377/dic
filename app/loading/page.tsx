@@ -35,7 +35,7 @@ export default function LoadingPage() {
         </div>
         <div className="text-center">
           <div className="text-xl font-bold text-primary">DIC</div>
-          <div className="text-xs text-muted-foreground">Digital Innovation</div>
+          <div className="text-xs text-muted-foreground">Development And Innovation Centre</div>
         </div>
         <p className="text-muted-foreground text-sm">Taking you home...</p>
       </div>
