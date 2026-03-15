@@ -48,9 +48,9 @@ const teamMembers = [
     id: 4,
     name: 'Rupesh Kumar Mahto',
     role: 'Backend Developer',
-    description: 'Built scalable  and optimized backend systems',
+    description: 'Built scalable and optimized backend systems',
     image: '/team/Rupesh.jpeg',
-    skills: ['UI Design', 'Animation', 'Branding', 'Visual Design'],
+    skills: ['Spring Boot','Databases','Api Design','Microservices'],
     email: 'kr.rupesh1604@gmail.com',
   },
   {
