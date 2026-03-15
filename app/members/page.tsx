@@ -68,6 +68,11 @@ export default function MembersPage() {
       const aOrder = yearOrder[a.joiningYear] ?? 99
       const bOrder = yearOrder[b.joiningYear] ?? 99
       if (aOrder !== bOrder) return aOrder - bOrder
+      // Within same year: put Rupesh Kumar Mahto first in 2024
+      if (a.joiningYear === 2024 && b.joiningYear === 2024) {
+        if (a.name === 'Rupesh Kumar Mahto') return -1
+        if (b.name === 'Rupesh Kumar Mahto') return 1
+      }
       return a.name.localeCompare(b.name)
     })
   }, [selectedCalendarYear, selectedClub])

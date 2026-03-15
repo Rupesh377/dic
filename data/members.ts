@@ -218,7 +218,7 @@ export const members: Member[] = [
     position: 'VR AR MR Member',
     skills: ['unity developer' ,'c++' , 'C#','DSA','game developer'],
     bio: 'Active member contributing to VR projects at VR AR MR Club',
-    image: '/avatars/Vikas.jpeg',
+    image: '/avatars/vikas.jpeg',
     linkedin: 'https://www.linkedin.com/in/vikas-madhukar-87a212243',
   },
   {
@@ -402,7 +402,7 @@ export const members: Member[] = [
     position: 'Coordinator',
     skills: ['JAVA', 'Spring Boot'],
     bio: 'Active coordinator contributing to robotics initiatives',
-    image: '/avatars/Rupesh.jpg',
+    image: '/avatars/Rupesh.jpeg',
     linkedin: 'https://www.linkedin.com/in/rupesh-kumar-mahto-a37b0731a/',
   },
   {
