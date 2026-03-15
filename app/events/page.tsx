@@ -21,6 +21,62 @@ const upcomingEvents = [
   },
 ]
 
+// All event memory images for the dome gallery (includes past event photos)
+const eventMemoriesImages = [
+  '/events/DSC00977.JPG',
+  '/events/DSC_0718.JPG',
+  '/events/DSC_0720.JPG',
+  '/events/DSC_0774.JPG',
+  '/events/DSC_0784.JPG',
+  '/events/DSC_0785.JPG',
+  '/events/DSC_0795.JPG',
+  '/events/DSC_0797.JPG',
+  '/events/DSC_0819.JPG',
+  '/events/DSC_0831.JPG',
+  '/events/DSC_0845.JPG',
+  '/events/DSC_0849.JPG',
+  '/events/DSC_0853.JPG',
+  '/events/DSC_0859.JPG',
+  '/events/DSC_0862.JPG',
+  '/events/DSC_0863.JPG',
+  '/events/DSC_0877 (1).JPG',
+  '/events/DSC_0877.JPG',
+  '/events/DSC_0882 (1).JPG',
+  '/events/DSC_0882.JPG',
+  '/events/DSC_0887.JPG',
+  '/events/IMG20230127222248 (1).jpg',
+  '/events/IMG20230127222248.jpg',
+  '/events/IMG20230128193532.jpg',
+  '/events/IMG20230129114939.jpg',
+  '/events/IMG20230130195349.jpg',
+  '/events/IMG20230130200208.jpg',
+  '/events/IMG20230130201816.jpg',
+  '/events/IMG20230130202319_BURST017.jpg',
+  '/events/IMG20230130202319_BURST018.jpg',
+  '/events/IMG20230130202458 - Copy.jpg',
+  '/events/IMG_1188_20240308162404.jpg',
+  '/events/IMG_1189_20240308162404.jpg',
+  '/events/IMG_1193_20240308162403.jpg',
+  '/events/IMG_1237_20240308162405.jpg',
+  '/events/IMG_1239_20240308162404.jpg',
+  '/events/IMG_1245.JPG',
+  '/events/IMG_20240303_014443.jpg',
+  '/events/IMG_7300.JPG',
+  '/events/IMG_7305.JPG',
+  '/events/IMG_7308.JPG',
+  '/events/IMG_7315.JPG',
+  '/events/Picsart_24-03-02_22-28-01-172-01.jpeg',
+  '/events/Picsart_24-03-02_22-32-28-295-01.jpeg',
+  '/events/Picsart_24-03-02_22-34-58-657-01.jpeg',
+  '/events/Picsart_24-03-02_22-44-36-988-01 (1).jpeg',
+  '/events/Picsart_24-03-02_22-44-36-988-01.jpeg',
+  '/events/prakhar.JPG',
+  '/events/hackathon-2023.jpg',
+  '/events/robotics-summit-2024.jpg',
+  '/events/vr-showcase-2024.jpg',
+  '/events/workshop-2024.jpg',
+]
+
 const pastEvents = [
   {
     title: 'AR Treasure Hunt',
@@ -28,6 +84,12 @@ const pastEvents = [
     date: '2024',
     participants: '100+ participants',
     images: [
+      '/events/IMG20230127222248.jpg',
+      '/events/IMG20230128193532.jpg',
+      '/events/IMG20230129114939.jpg',
+      '/events/IMG20230130195349.jpg',
+      '/events/IMG20230130200208.jpg',
+      '/events/IMG20230130201816.jpg',
       '/events/hackathon-2023.jpg',
       '/events/workshop-2024.jpg',
     ],
@@ -38,6 +100,11 @@ const pastEvents = [
     date: '2024',
     participants: '80+ participants',
     images: [
+      '/events/DSC_0718.JPG',
+      '/events/DSC_0720.JPG',
+      '/events/DSC_0774.JPG',
+      '/events/DSC_0784.JPG',
+      '/events/DSC_0785.JPG',
       '/events/vr-showcase-2024.jpg',
       '/events/hackathon-2023.jpg',
     ],
@@ -48,6 +115,10 @@ const pastEvents = [
     date: '2024',
     participants: '75+ attendees',
     images: [
+      '/events/IMG_7300.JPG',
+      '/events/IMG_7305.JPG',
+      '/events/IMG_7308.JPG',
+      '/events/IMG_7315.JPG',
       '/events/workshop-2024.jpg',
       '/events/robotics-summit-2024.jpg',
     ],
@@ -58,6 +129,15 @@ const pastEvents = [
     date: '2024',
     participants: '200+ visitors',
     images: [
+      '/events/IMG_1188_20240308162404.jpg',
+      '/events/IMG_1189_20240308162404.jpg',
+      '/events/IMG_1193_20240308162403.jpg',
+      '/events/IMG_1237_20240308162405.jpg',
+      '/events/IMG_1239_20240308162404.jpg',
+      '/events/IMG_1245.JPG',
+      '/events/IMG_20240303_014443.jpg',
+      '/events/Picsart_24-03-02_22-28-01-172-01.jpeg',
+      '/events/Picsart_24-03-02_22-32-28-295-01.jpeg',
       '/events/robotics-summit-2024.jpg',
       '/events/workshop-2024.jpg',
       '/events/vr-showcase-2024.jpg',
@@ -72,10 +152,7 @@ export default function EventsPage() {
   const images = selectedEvent?.images ?? []
   const hasMultiple = images.length > 1
 
-  const domeImages = useMemo(
-    () => pastEvents.flatMap((e) => e.images ?? []),
-    []
-  )
+  const domeImages = useMemo(() => eventMemoriesImages, [])
 
   useEffect(() => {
     if (selectedEvent) {
