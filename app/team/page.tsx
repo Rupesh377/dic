@@ -47,8 +47,8 @@ const teamMembers = [
   {
     id: 4,
     name: 'Rupesh Kumar Mahto',
-    role: 'Creative Designer & Animation Specialist',
-    description: 'Designed engaging animations and visual effects that enhance the overall user experience throughout the site.',
+    role: 'Backend Developer',
+    description: 'Built scalable  and optimized backend systems',
     image: '/team/Rupesh.jpeg',
     skills: ['UI Design', 'Animation', 'Branding', 'Visual Design'],
     email: 'kr.rupesh1604@gmail.com',
